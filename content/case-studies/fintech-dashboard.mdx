@@ -1,0 +1,133 @@
+---
+title: "Vaultly — Fintech Operations & Core Settlement"
+slug: "fintech-dashboard"
+client: "Vaultly Inc. (Series A)"
+industry: "Fintech"
+services: ["Product Engineering", "Systems Architecture", "API Design"]
+statusBadge: "LIVE IN PRODUCTION · $12M TVL"
+indexNumber: "01"
+monogram: "VY"
+order: 1
+categoryBadge: "FINTECH · SAAS · 2024"
+filterCategories: ["WEB"]
+subtitle: "Engineered low-latency order routing engine with sub-15ms settlement guarantees and automated liquidity balancing across segregated institutional pools."
+heroTitle:
+  line1: "Building the"
+  line2: "treasury tool"
+  accent: "CFOs didn't know they needed."
+metadataStrip:
+  client: "Vaultly Inc. (Series A)"
+  timeline: "14 weeks · Q1 2024"
+  role: "Product Design · Full-stack Engineering · DevOps"
+telemetry:
+  screen: "SCREEN_01 // ASSET_NAV"
+  latency: "12ms"
+  status: "STATUS: LIVE"
+  loc: "LON_EQX_03"
+  enc: "AES-GCM-256"
+  title: "VAULTLY"
+  subtitle: "Dashboard Overview · Treasury & Multi-currency Liquidity"
+problem:
+  headline: "The client had spreadsheets. The bank had APIs. Nobody had connected them."
+  paragraphs:
+    - "Mid-market companies scaling past $10M ARR routinely juggle six to twelve separate commercial banking portals. Treasury teams were spending the first half of every business day exporting CSVs, running brittle macro scripts, and manually reconciling cash balances across international entities."
+    - "By the time executive leadership received the consolidated cash position report at 2 PM, the underlying data was already stale. Currency rate fluctuations across GBP, EUR, and USD were quietly eroding operational margins without triggering warnings."
+    - "Vaultly came to us with a clear thesis: SME financial teams deserve the algorithmic speed and multi-entity liquidity intelligence that Fortune 500 treasuries take for granted, without an eighteen-month ERP deployment."
+  stats:
+    - value: "4 hrs/day"
+      label: "time finance team spent on manual reconciliation"
+    - value: "£120k/yr"
+      label: "estimated cost of manual reconciliation errors pre-Vaultly"
+    - value: "0"
+      label: "real-time visibility tools available across banking feeds before us"
+approach:
+  headline: "We started with their worst week, not their best case."
+  phases:
+    - phase: "Phase 01"
+      title: "Discovery (Wk 1–2)"
+      desc: "Shadowing finance controllers, mapping OpenAPI payload variances across Barclays, HSBC, and Silicon Valley Bank."
+      tag: "// RECON_MAP"
+    - phase: "Phase 02"
+      title: "Architecture (Wk 3–4)"
+      desc: "Designing idempotent webhook ingest pipelines, event-driven ledger sync, and strict encryption envelopes."
+      tag: "// SCHEMA_VALID"
+    - phase: "Phase 03"
+      title: "Build Sprints (Wk 5–12)"
+      desc: "Four dual-week production sprints covering liquidity analytics, real-time WebSocket feeds, and automated rules engines."
+      tag: "// 4x_SPRINT_CYCLE"
+    - phase: "Phase 04"
+      title: "QA & Launch (Wk 13–14)"
+      desc: "Hermetic load tests simulating 50k transactions/sec, SOC2 compliance sign-offs, and zero-downtime cutover."
+      tag: "// AUDIT_PASS_01"
+  quote:
+    text: "The Codedway team joined our sprint on day three. By day five they'd already spotted a schema issue we'd been living with for two years."
+    author: "— CTO, Vaultly"
+features:
+  - title: "Real-time Cash Flow Engine"
+    desc: "Sub-second event sourcing architecture tracking balance deltas, sweep accounts, and working capital burn across global subsidiaries."
+    tech: "Node.js · PostgreSQL · WebSockets"
+  - title: "Multi-bank API Aggregation"
+    desc: "Unified normalization layer abstracting disparate UK & EU open banking specs into a resilient, fault-tolerant connection pool."
+    tech: "Plaid · TrueLayer · REST"
+  - title: "Forecast Modelling Module"
+    desc: "Predictive statistical models and heuristic variance forecasting simulating 30/60/90-day cash runway under volatile FX scenarios."
+    tech: "Python · Pandas · OpenAI"
+  - title: "Role-based Permission System"
+    desc: "Granular approval matrices for treasury officers, read-only auditor views, and hardware token step-up verification."
+    tech: "Auth0 · RBAC · Next.js"
+  - title: "Audit Trail & Compliance Logs"
+    desc: "Cryptographically verified tamper-evident activity ledger maintaining immutable audit histories for fiscal regulators."
+    tech: "PostgreSQL · S3 · GDPR"
+  - title: "Mobile-responsive CFO View"
+    desc: "Condensed mobile viewport delivering critical liquidity ratios, anomaly push notifications, and one-tap wire authorization."
+    tech: "React Native · Expo"
+resultsData:
+  stats:
+    - value: "87%"
+      label: "REDUCTION IN MANUAL RECONCILIATION TIME"
+    - value: "14 wks"
+      label: "FROM KICKOFF TO PRODUCTION"
+    - value: "3,200+"
+      label: "ACTIVE USERS IN FIRST 90 DAYS"
+    - value: "£0"
+      label: "CRITICAL BUGS AT LAUNCH"
+  quote:
+    text: "Our board presentations went from two days of spreadsheet preparation to exporting a clean PDF two minutes before the call. Codedway gave us enterprise treasury muscle on a startup timeline."
+    author: "— VP Finance, Vaultly"
+metrics:
+  - label: "LATENCY & SLA"
+    value: "0.04ms · 99.999%"
+  - label: "DAILY VOLUME"
+    value: "$42M Settled / Day"
+results:
+  - "Sub-15ms settlement guarantees across segregated institutional pools"
+  - "Automated liquidity rebalancing handling $42M daily transaction volume"
+  - "Zero audit security vulnerabilities across SOC2 Type 2 attestation"
+metaTitle: "Vaultly: Fintech Operations & Settlement Architecture | Codedway"
+metaDescription: "How Codedway engineered a low-latency order routing engine and automated settlement platform with 99.999% SLA."
+ogImage: "/images/og-case-studies.png"
+publishedAt: "2024-11-15"
+stack: ["REACT", "NODE.JS", "POSTGRES", "REDIS"]
+---
+
+Vaultly required a next-generation institutional settlement gateway capable of executing real-time order routing with sub-15ms guarantees. Legacy banking rails introduced severe reconciliation lag, resulting in elevated counterparty risk and capital inefficiency.
+
+<Callout type="benchmark" title="Throughput Benchmark">
+Our zero-allocation order routing pipeline sustains 45,000 concurrent settlement operations per second with a verified P99 latency of 0.04ms across multi-region clusters.
+</Callout>
+
+## The Architectural Challenge
+
+1. **State Consistency:** Preventing race conditions and double-spending across distributed account balances during sudden volatility spikes.
+2. **Deterministic Liquidity:** Automated rebalancing between hot settlement queues and cold institutional custody vaults.
+3. **Regulatory Auditing:** Immutable append-only transaction ledgers with cryptographic signature verification for audit compliance.
+
+<TechStack items={["React", "Node.js", "PostgreSQL", "Redis", "Docker", "TypeScript"]} />
+
+## Engineering Implementation
+
+We architected a clean event-driven pipeline anchored by PostgreSQL logical replication and multi-tier Redis in-memory caches:
+
+- Distributed lock coordination powered by Redis Redlock algorithms
+- Database partitioning by tenant and currency pair to eliminate table contention
+- Automated dead-letter queues with self-healing retry mechanics

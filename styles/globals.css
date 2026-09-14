@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-radius: 0px !important;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0C0C0C;
+    color: #F0EDE8;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  ::selection {
+    background-color: #C8FF57;
+    color: #0C0C0C;
+  }
+}
+
+/* Monochromatic noise texture overlay (3.5% opacity) */
+.noise-bg {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Custom cursor tracker */
+#cursor-dot {
+  pointer-events: none;
+  position: fixed;
+  width: 14px;
+  height: 14px;
+  background-color: #C8FF57;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: width 0.2s ease, height 0.2s ease, transform 0.05s ease-out;
+}
+
+/* Case study row hover shift */
+.case-row {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+}
+
+.case-row:hover {
+  transform: translateX(6px);
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+.case-row .case-arrow {
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 0.25s ease;
+}
+
+.case-row:hover .case-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Journal Card hover border */
+.journal-card {
+  transition: border-color 0.2s ease;
+}
+
+.journal-card:hover {
+  border-color: #C8FF57 !important;
+}
+
+/* Ticker marquee animation */
+.ticker-content {
+  display: flex;
+  width: max-content;
+  animation: ticker 40s linear infinite;
+}
+
+.ticker-content:hover {
+  animation-play-state: paused;
+}
+
+/* Project card interactive hover styles */
+.project-card {
+  transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover {
+  border-color: #444444 !important;
+}
+
+.project-card .card-arrow {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .card-arrow {
+  transform: translateX(4px);
+}
+
+/* Telemetry data visualization bar micro-pulse */
+@keyframes bar-breathe {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.08);
+  }
+}
+
+.telemetry-bar {
+  transform-origin: bottom;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.telemetry-bar:hover {
+  opacity: 0.85;
+  transform: scaleY(1.12);
+}
+
+/* Button click tactile feedback */
+button:active, a.inline-flex:active, a.inline-block:active {
+  transform: translateY(1px);
+}

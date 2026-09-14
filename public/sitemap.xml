@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://codedway.com/contact</loc><lastmod>2026-09-11T23:00:09.419Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>1</priority></url>
+<url><loc>https://codedway.com/about</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://codedway.com/services</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://codedway.com/blog</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/careers</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://codedway.com/case-studies</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/services/ai-integration</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://codedway.com/services/product-engineering</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://codedway.com/services/qa-devops</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://codedway.com/services/staff-augmentation</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://codedway.com/blog/ai-integrations-b2b-saas-2025</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/blog/cut-api-latency-redis</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/blog/from-mvp-to-series-a-codebase</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/blog/hiring-remote-engineers-async-culture</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/blog/honest-retrospective-biggest-project</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/blog/multi-tenant-saas-architecture</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/blog/qa-checklist-production-deploy</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/blog/rag-vs-fine-tuning-guide</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/blog/the-real-cost-of-technical-debt</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/blog/why-we-stopped-using-jira</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/case-studies/autonomous-logistics</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/case-studies/cognitive-search</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/case-studies/fintech-dashboard</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/case-studies/global-commerce-api</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/case-studies/synapse-studio</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://codedway.com/case-studies/vitalis-healthtech</loc><lastmod>2026-09-11T23:00:09.421Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+</urlset>

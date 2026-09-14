@@ -1,0 +1,31 @@
+---
+title: "How we cut API latency by 60% with Redis and smarter query design"
+slug: "cut-api-latency-redis"
+excerpt: "A teardown of high-load bottleneck resolution, indexed lookups, and multi-region read replicas."
+author: "Saad Rehman"
+authorRole: "Lead Engineer"
+authorInitials: "SR"
+publishedAt: "2025-10-24"
+category: "Engineering"
+tags: ["Engineering", "Redis", "Database", "Performance"]
+readTime: "6 min read"
+metaTitle: "Cutting API Latency by 60% with Redis | Codedway"
+metaDescription: "A deep dive into query optimization, multi-region Redis caching, and zero-allocation JSON serialization."
+ogImage: "/images/og-blog.png"
+---
+
+When API latency begins degrading past 400ms under concurrent traffic, naive teams throw compute at the problem. We resolved an enterprise SaaS bottleneck by systematically restructuring the query path and embedding distributed Redis caches.
+
+<ResultCard
+  metric="60%"
+  label="LATENCY REDUCTION"
+  description="P99 response times dropped from 480ms down to 192ms across high-throughput data routes."
+/>
+
+## Architectural Bottleneck Analysis
+
+Before introducing caching layers, we instrumented distributed traces with OpenTelemetry. The root causes were clear:
+
+- Unindexed foreign key lookups triggering full table scans during peak hours
+- N+1 query loops across nested relationships
+- Expensive cryptographic session deserialization on every microservice hop

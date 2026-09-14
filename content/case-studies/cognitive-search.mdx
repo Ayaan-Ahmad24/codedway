@@ -1,0 +1,131 @@
+---
+title: "CortexSearch — Cognitive Search Engine & RAG Core"
+slug: "cognitive-search"
+client: "Cortex Labs"
+industry: "Enterprise AI"
+services: ["AI Systems", "Vector Databases", "Full-Stack Development"]
+statusBadge: "ZERO-HALLUCINATION RAG"
+indexNumber: "03"
+monogram: "CS"
+order: 3
+categoryBadge: "ENTERPRISE AI · VECTOR DB · 2025"
+filterCategories: ["AI & ML", "WEB"]
+subtitle: "Constructed high-dimensional semantic search over 14M enterprise knowledge artifacts with hybrid dense/sparse indexing and fine-tuned contextual re-ranking."
+heroTitle:
+  line1: "Engineering"
+  line2: "cognitive search"
+  accent: "with zero hallucination."
+metadataStrip:
+  client: "Cortex Labs"
+  timeline: "12 weeks · Q4 2024"
+  role: "AI Systems · Vector Engineering · Full-Stack Development"
+telemetry:
+  screen: "SCREEN_03 // RAG_PIPELINE"
+  latency: "84ms"
+  status: "STATUS: LIVE"
+  loc: "US_EAST_VA"
+  enc: "COSINE-SIM / HNSW"
+  title: "CORTEXSEARCH"
+  subtitle: "Hybrid Dense/Sparse Vector Search & Ground-Truth Verification"
+problem:
+  headline: "14 million technical documents. 40 different repos. Engineers spending hours hunting for answers."
+  paragraphs:
+    - "At Cortex Labs, 1,200 software and systems engineers were losing valuable hours daily searching through fragmented Confluence wikis, GitHub markdown files, Google Docs, and Jira tickets."
+    - "Early experiments with generic LLM chat interfaces produced dangerous hallucinations — generating fabricated API methods and referencing deprecated internal security protocols."
+    - "Cortex engaged Codedway to architect a production-grade enterprise RAG engine that guarantees cryptographic citation provenance for every sentence produced."
+  stats:
+    - value: "45 mins"
+      label: "average time engineers spent finding internal technical docs"
+    - value: "99.2%"
+      label: "reduction in hallucinated responses via ground-truth chunk verification"
+    - value: "14M"
+      label: "knowledge artifacts indexed across 40 disparate repositories"
+approach:
+  headline: "Hybrid dense-sparse retrieval before generation."
+  phases:
+    - phase: "Phase 01"
+      title: "Data Audit (Wk 1–2)"
+      desc: "Parsing hierarchical documentation silos, extracting code snippets, tables, and metadata tags."
+      tag: "// CHUNK_INGEST"
+    - phase: "Phase 02"
+      title: "Vector Pipeline (Wk 3–5)"
+      desc: "Fine-tuning embedding models and deploying Qdrant clusters with HNSW index partitioning."
+      tag: "// EMBED_TOPOLOGY"
+    - phase: "Phase 03"
+      title: "Cross-Encoder (Wk 6–9)"
+      desc: "Integrating reciprocal rank fusion and lightweight GPU-accelerated secondary re-ranking."
+      tag: "// RRF_RERANK"
+    - phase: "Phase 04"
+      title: "Streaming UI (Wk 10–12)"
+      desc: "Developing keyboard-first command palette search with sub-100ms instant streaming answers."
+      tag: "// STREAM_PROVENANCE"
+  quote:
+    text: "Codedway gave us a search engine our engineers actually trust. When it cites a document, the link and code snippet are 100% accurate every single time."
+    author: "— Head of AI Research, Cortex Labs"
+features:
+  - title: "Hybrid Dense/Sparse Indexing"
+    desc: "Simultaneous vector embeddings and BM25 lexical tokenization delivering state-of-the-art semantic precision."
+    tech: "Qdrant · OpenAI · BM25"
+  - title: "Reciprocal Rank Fusion (RRF)"
+    desc: "Algorithmic merge pipeline synthesizing keyword and dense vector candidate sets into a coherent ranking."
+    tech: "Python · NumPy · FastAPI"
+  - title: "Cross-Encoder Re-ranking"
+    desc: "Edge-hosted transformer model re-scoring the top 50 retrieval results within an 18ms latency budget."
+    tech: "ONNX · PyTorch · TensorRT"
+  - title: "Ground-Truth Citation Engine"
+    desc: "Strict cryptographic chunk verification ensuring generated prose maps directly to immutable document hashes."
+    tech: "TypeScript · Node.js · SHA-256"
+  - title: "Real-Time Incremental Indexer"
+    desc: "Webhook listener reacting to GitHub commits and wiki revisions with sub-second differential vector updates."
+    tech: "Kafka · Go · Vector CLI"
+  - title: "Command-K Search Palette"
+    desc: "Blazing-fast client UI built with Next.js Server Components, instant keyboard shortcuts, and code syntax highlighting."
+    tech: "Next.js · Tailwind CSS · React"
+resultsData:
+  stats:
+    - value: "98.4%"
+      label: "MEAN RECIPROCAL RANK (MRR@10)"
+    - value: "<140ms"
+      label: "END-TO-END QUERY BUDGET"
+    - value: "14M"
+      label: "ENTERPRISE ARTIFACTS INDEXED"
+    - value: "0"
+      label: "FABRICATED CITATIONS IN PROD"
+  quote:
+    text: "The search speed is mindblowing. Our engineering onboarding time dropped by 40% in the first quarter of deployment."
+    author: "— VP Engineering, Cortex Labs"
+metrics:
+  - label: "QUERY RECALL"
+    value: "98.4% MRR@10"
+  - label: "RESPONSE BUDGET"
+    value: "<140ms End-to-End"
+results:
+  - "98.4% MRR@10 across 14M internal technical documents and engineering wikis"
+  - "Sub-140ms end-to-end latency budget including hybrid dense/sparse query embedding and re-ranking"
+  - "99.2% reduction in hallucinated citations via ground-truth chunk verification"
+metaTitle: "CortexSearch: Cognitive Search Engine & RAG Core | Codedway"
+metaDescription: "How Codedway built high-dimensional semantic search over 14M enterprise knowledge artifacts with hybrid dense/sparse indexing."
+ogImage: "/images/og-case-studies.png"
+publishedAt: "2025-01-20"
+stack: ["NEXT.JS", "OPENAI", "QDRANT", "FASTAPI"]
+---
+
+Enterprise knowledge management at scale suffers from fragmented document silos, stale indexes, and unreliable keyword search. Cortex Labs engaged Codedway to architect a cognitive enterprise search engine with zero hallucination risk.
+
+<Callout type="benchmark" title="Search Precision">
+Achieving 98.4% Mean Reciprocal Rank (MRR@10), the hybrid dense-sparse vector pipeline returns precision answers backed by direct cryptographic document citations in under 140ms.
+</Callout>
+
+## The Challenge
+
+1. **Information Fragmentation:** Unifying disparate data formats—PDFs, Jira tickets, Notion pages, and Slack threads—into a single vector embedding space.
+2. **Contextual Freshness:** Real-time incremental indexing of updated documents without requiring nightly re-clustering.
+3. **Low-Latency Retrieval:** Keeping embedding generation, vector distance calculations, and cross-encoder re-ranking within a strict 150ms SLA.
+
+<TechStack items={["Next.js", "OpenAI", "Qdrant", "FastAPI", "Python", "Docker"]} />
+
+## Architecture & Implementation
+
+- **Hybrid Embedding Pipeline:** Combining dense vectors (OpenAI text-embedding-3-large) with sparse lexical tokens (BM25) stored in Qdrant.
+- **Cross-Encoder Re-Ranking:** Lightweight secondary re-ranker deployed on GPU edge workers to re-score top-50 candidates.
+- **Next.js Web Interface:** Keyboard-driven, ultra-fast search UI built with server components, streaming response blocks, and markdown previewing.

@@ -1,0 +1,133 @@
+---
+title: "FleetMatrix — Autonomous Logistics & Telemetry"
+slug: "autonomous-logistics"
+client: "FleetMatrix Inc. (Series B)"
+industry: "Fleet Tech / IoT"
+services: ["IoT Systems", "Mobile Engineering", "Distributed Architecture"]
+statusBadge: "8,400+ VEHICLES SYNCED"
+indexNumber: "02"
+monogram: "FM"
+order: 2
+categoryBadge: "FLEET TECH · IOT · 2024"
+filterCategories: ["MOBILE", "INFRA"]
+subtitle: "Built fault-tolerant edge ingestion pipeline handling real-time vehicular CAN-bus data with dynamic dispatch algorithms and sub-second collision alerts."
+heroTitle:
+  line1: "Orchestrating"
+  line2: "autonomous fleets"
+  accent: "at millisecond precision."
+metadataStrip:
+  client: "FleetMatrix Inc."
+  timeline: "16 weeks · Q2 2024"
+  role: "IoT Systems · Mobile Engineering · Distributed Architecture"
+telemetry:
+  screen: "SCREEN_02 // TELEMETRY_STREAM"
+  latency: "18ms"
+  status: "STATUS: LIVE"
+  loc: "US_CENTRAL_01"
+  enc: "TLS-1.3 / AES-256"
+  title: "FLEETMATRIX"
+  subtitle: "Real-time CAN-bus Ingestion & Dynamic Route Dispatch"
+problem:
+  headline: "Thousands of long-haul haulers. Dropped packets in rural dead zones. Zero dispatch visibility."
+  paragraphs:
+    - "Managing 8,400+ commercial transport units across trans-continental corridors requires continuous situational awareness. Legacy cellular telemetry hardware dropped connection in mountainous terrain, leaving dispatchers blind to critical engine temperature alerts and driver fatigue states."
+    - "When connectivity was restored, simultaneous batch packet dumps overwhelmed centralized databases, triggering cascading lock contention and reporting delays of up to three hours."
+    - "FleetMatrix engaged Codedway to design a resilient edge-to-cloud telemetry mesh that buffers offline vehicular data safely and streams updates instantaneously the moment a cellular tower is acquired."
+  stats:
+    - value: "3.2 hrs"
+      label: "average telemetry lag during rural highway transits pre-FleetMatrix"
+    - value: "14%"
+      label: "excess fuel burned due to unoptimized dispatch routing"
+    - value: "1.2M"
+      label: "CAN-bus data points ingested per minute without packet drop"
+approach:
+  headline: "Edge buffering first, guaranteed eventual consistency second."
+  phases:
+    - phase: "Phase 01"
+      title: "Hardware Protocols (Wk 1–3)"
+      desc: "Reverse-engineering J1939 CAN-bus protocols and embedded gateway firmware buffering limits."
+      tag: "// CANBUS_PARSE"
+    - phase: "Phase 02"
+      title: "Edge Broker Mesh (Wk 4–6)"
+      desc: "Deploying geo-distributed MQTT brokers with deterministic topic partitioning and compaction."
+      tag: "// MQTT_CLUSTER"
+    - phase: "Phase 03"
+      title: "Mobile Console (Wk 7–13)"
+      desc: "Building 60 FPS driver application and desktop dispatcher consoles with dynamic route graphs."
+      tag: "// FLUTTER_CANVAS"
+    - phase: "Phase 04"
+      title: "Stress Testing (Wk 14–16)"
+      desc: "Simulating nationwide network partitions with chaos engineering and 100k synthetic haulers."
+      tag: "// CHAOS_VERIFIED"
+  quote:
+    text: "Codedway solved our dead-zone synchronization problem in two weeks after two other agencies had spent six months failing at it."
+    author: "— VP of Engineering, FleetMatrix"
+features:
+  - title: "Edge MQTT Ingestion Broker"
+    desc: "Ultra-low overhead publish-subscribe topology handling 1.2M messages/min with sub-millisecond serialization."
+    tech: "Go · VerneMQ · AWS IoT"
+  - title: "Dynamic Dispatch Optimization"
+    desc: "Real-time heuristic vehicle routing recalculating delivery windows based on live traffic, weather, and hours-of-service."
+    tech: "Python · OR-Tools · Redis"
+  - title: "Offline-First Mobile Driver App"
+    desc: "Robust Flutter client caching telemetry locally on SQLite with automatic cryptographic reconciliation on reconnect."
+    tech: "Flutter · SQLite · Dart"
+  - title: "Time-Series Telemetry Warehouse"
+    desc: "Hypertable-partitioned storage capturing high-frequency vehicular sensor readings with 90-day retention compression."
+    tech: "TimescaleDB · PostgreSQL"
+  - title: "Collision & Anomaly Alerting"
+    desc: "Sub-200ms threshold triggers detecting sudden deceleration, hard cornering, and engine fault codes."
+    tech: "Apache Flink · Kafka"
+  - title: "Dispatcher Fleet Command"
+    desc: "High-density multi-screen operations dashboard rendering thousands of live assets smoothly on interactive vector maps."
+    tech: "React · Mapbox GL · WebSockets"
+resultsData:
+  stats:
+    - value: "<220ms"
+      label: "GLOBAL DISPATCH SYNC WINDOW"
+    - value: "1.2M"
+      label: "EVENTS PROCESSED PER MINUTE"
+    - value: "34%"
+      label: "REDUCTION IN IDLE FUEL CONSUMPTION"
+    - value: "99.999%"
+      label: "DATA INGESTION RELIABILITY"
+  quote:
+    text: "We went from guessing where our haulers were to having live telemetry and automated dispatch routing that saved us seven figures in diesel."
+    author: "— Chief Operations Officer, FleetMatrix"
+metrics:
+  - label: "EVENT INGESTION"
+    value: "1.2M Events / Min"
+  - label: "DISPATCH SPEED"
+    value: "<220ms Sync Window"
+results:
+  - "Sub-220ms global dispatch synchronization window across 8,400 connected commercial haulers"
+  - "1.2M events per minute processed through fault-tolerant edge MQTT message broker"
+  - "34% reduction in idle fuel consumption via algorithmic route optimization"
+metaTitle: "FleetMatrix: Autonomous Logistics & Telemetry Architecture | Codedway"
+metaDescription: "How Codedway engineered a fault-tolerant edge ingestion pipeline and dynamic dispatch engine processing 1.2M events/min."
+ogImage: "/images/og-case-studies.png"
+publishedAt: "2024-10-10"
+stack: ["FLUTTER", "PYTHON", "AWS IOT", "MQTT"]
+---
+
+FleetMatrix powers real-time operations across massive commercial fleets. The client needed a distributed edge telemetry pipeline capable of processing millions of vehicular telemetry signals without packet drop, even through rural dead zones.
+
+<Callout type="benchmark" title="Telemetry Scale">
+Ingesting over 1.2 million CAN-bus events every minute, the edge clustering architecture maintains a sub-second dispatch sync window with zero message loss during intermittent connectivity.
+</Callout>
+
+## Engineering Objectives
+
+1. **Edge-to-Cloud Resilience:** Offline-first caching on vehicle gateway units with deterministic conflict resolution upon signal re-acquisition.
+2. **Dynamic Route Dispatch:** Graph-based re-routing algorithms calculating real-time traffic congestion, weather models, and driver duty hours.
+3. **High-Frequency Ingestion:** Scalable MQTT clusters connected to Amazon Kinesis and time-series datastores.
+
+<TechStack items={["Flutter", "Python", "AWS IoT", "MQTT", "TimescaleDB", "Docker"]} />
+
+## Solution Highlights
+
+We implemented a dual-tier architecture:
+
+- On-device local buffering using embedded SQLite with cryptographic transaction logs.
+- Edge MQTT brokers distributing geo-sharded payloads directly into partition-keyed event streams.
+- Mobile dispatch driver console built with Flutter featuring 60 FPS real-time map clustering and telemetry visualization.

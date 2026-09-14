@@ -1,0 +1,131 @@
+---
+title: "Vitalis — HealthTech Telemetry & Clinical Portal"
+slug: "vitalis-healthtech"
+client: "Vitalis Health Systems"
+industry: "Healthcare / HIPAA"
+services: ["HIPAA Architecture", "Real-Time Telemetry", "WebRTC Engineering"]
+statusBadge: "HIPAA COMPLIANT · ZERO AUDIT BUGS"
+indexNumber: "05"
+monogram: "VT"
+order: 5
+categoryBadge: "HEALTHCARE · HIPAA · 2024"
+filterCategories: ["AI & ML"]
+subtitle: "Delivered encrypted end-to-end patient telemetry stream with zero-trust role access matrices, audited BAA-grade data warehouses, and peer-to-peer clinical video."
+heroTitle:
+  line1: "Architecting"
+  line2: "clinical telemetry"
+  accent: "with zero-trust HIPAA compliance."
+metadataStrip:
+  client: "Vitalis Health Systems"
+  timeline: "16 weeks · Q3 2024"
+  role: "HIPAA Architecture · Real-Time Telemetry · WebRTC Engineering"
+telemetry:
+  screen: "SCREEN_05 // CLINICAL_VITALS"
+  latency: "15ms"
+  status: "STATUS: LIVE"
+  loc: "US_EAST_HIPAA"
+  enc: "AES-GCM-256 / BAA"
+  title: "VITALIS"
+  subtitle: "Bedside Telemetry Streaming & WebRTC Tele-Consultation Enclave"
+problem:
+  headline: "Disconnected ICU monitors. Fragile telehealth video. Strict HIPAA compliance audits looming."
+  paragraphs:
+    - "Vitalis operates a network of regional intensive care facilities requiring specialized remote clinical consultations. Bedside medical hardware generated vital streams that had to be transmitted to off-site cardiologists and intensivists in real time."
+    - "Off-the-shelf video conferencing tools lacked end-to-end encryption guarantees, breached HIPAA Business Associate Agreement (BAA) standards, and introduced noticeable audio/video desync during acute emergency consultations."
+    - "Vitalis partnered with Codedway to engineer a zero-trust clinical portal uniting real-time patient telemetry waveforms with encrypted peer-to-peer WebRTC video."
+  stats:
+    - value: "99.995%"
+      label: "uptime SLA required across ICU monitoring streams"
+    - value: "0"
+      label: "security vulnerabilities identified during third-party HIPAA audit"
+    - value: "<80ms"
+      label: "end-to-end WebRTC latency between remote specialists and ICU"
+approach:
+  headline: "Zero-trust encryption boundaries from sensor to screen."
+  phases:
+    - phase: "Phase 01"
+      title: "BAA Enclave (Wk 1–3)"
+      desc: "Architecting isolated AWS GovCloud/HIPAA VPC enclaves with KMS hardware key rotation."
+      tag: "// ENCLAVE_SEC"
+    - phase: "Phase 02"
+      title: "Telemetry Stream (Wk 4–8)"
+      desc: "Building high-frequency ECG waveform serializer streaming over multiplexed TLS sockets."
+      tag: "// VITALS_PIPELINE"
+    - phase: "Phase 03"
+      title: "WebRTC Engine (Wk 9–12)"
+      desc: "Deploying custom WebRTC SFU media nodes with ephemeral end-to-end encryption keys."
+      tag: "// WEBRTC_MEDIA"
+    - phase: "Phase 04"
+      title: "Audit & Cutover (Wk 13–16)"
+      desc: "Passing third-party SOC2 Type II and HIPAA compliance penetration tests with zero findings."
+      tag: "// ZERO_DEFECTS"
+  quote:
+    text: "Codedway gave us a clinical video and telemetry platform that passed rigorous federal compliance scrutiny on the very first submission."
+    author: "— Chief Medical Information Officer, Vitalis"
+features:
+  - title: "Zero-Trust HIPAA Enclave"
+    desc: "Isolated VPC environment with client-side field encryption, BAA compliance, and immutable access auditing."
+    tech: "AWS KMS · PostgreSQL · IAM"
+  - title: "60 FPS Vitals Waveform Canvas"
+    desc: "WebGL-accelerated canvas rendering continuous ECG and SpO2 waveforms smoothly without browser UI thread blocking."
+    tech: "WebGL · Next.js · Canvas API"
+  - title: "Encrypted WebRTC Consultation"
+    desc: "Peer-to-peer low-latency video and audio stream with ephemeral session keys for clinical tele-rounds."
+    tech: "WebRTC · Mediasoup · Node.js"
+  - title: "Audit Trail & PHI Access Ledger"
+    desc: "Cryptographically signed tamper-evident logs capturing every single clinical record inspection."
+    tech: "PostgreSQL · AWS S3 · Object Lock"
+  - title: "Emergency Failover Cluster"
+    desc: "Warm-standby failover architecture automatically switching signaling nodes in under 100 milliseconds."
+    tech: "Docker · Kubernetes · Route 53"
+  - title: "Clinician Single Sign-On"
+    desc: "Strict multi-factor authentication integrating hospital SAML 2.0 / Okta directories with hardware security keys."
+    tech: "Okta · SAML · WebAuthn"
+resultsData:
+  stats:
+    - value: "99.995%"
+      label: "CLINICAL PORTAL AVAILABILITY"
+    - value: "<80ms"
+      label: "WEBRTC MEDIA ROUNDTRIP"
+    - value: "100%"
+      label: "HIPAA COMPLIANCE PASS RATE"
+    - value: "0"
+      label: "AUDIT ANOMALIES RECORDED"
+  quote:
+    text: "Our remote specialists can see live patient waveforms with less latency than if they were standing in the hallway."
+    author: "— Lead Intensivist, Vitalis Health"
+metrics:
+  - label: "ENCRYPTION PROTOCOL"
+    value: "AES-256 / SOC2 T2"
+  - label: "CLINICIAN UPTIME"
+    value: "99.995% Availability"
+results:
+  - "100% HIPAA compliance pass with zero critical findings during external third-party penetration audit"
+  - "99.995% clinical portal uptime across intensive care telemetry feeds"
+  - "Sub-80ms end-to-end WebRTC audio/video latency between remote specialists and bedside monitors"
+metaTitle: "Vitalis: HealthTech Telemetry & Clinical Portal | Codedway"
+metaDescription: "How Codedway built an encrypted end-to-end patient telemetry portal with zero-trust security and WebRTC video."
+ogImage: "/images/og-case-studies.png"
+publishedAt: "2024-09-01"
+stack: ["NEXT.JS", "PYTHON", "HIPAA INFRA", "WEBRTC"]
+---
+
+Vitalis required an ultra-reliable, HIPAA-compliant patient monitoring and tele-consultation platform connecting ICU bedside equipment to remote specialists.
+
+<Callout type="benchmark" title="Security & Compliance">
+Operating in a strict zero-trust enclave, every telemetry packet is cryptographically encrypted at rest and in transit (AES-GCM-256) with complete audit trail provenance.
+</Callout>
+
+## Clinical Requirements
+
+1. **Strict Data Segregation:** Zero-leakage multi-tenancy ensuring Protected Health Information (PHI) cannot cross organization boundaries.
+2. **Real-time Vitals Streaming:** Continuous ECG, SpO2, and pulse telemetry rendered at 60 FPS without UI jank or memory leaks.
+3. **Emergency Failover:** Redundant WebRTC signaling clusters capable of instant warm handover if an availability zone drops.
+
+<TechStack items={["Next.js", "Python", "WebRTC", "PostgreSQL", "Docker", "AWS"]} />
+
+## Delivery Highlights
+
+- Built a custom Next.js clinical dashboard with WebGL canvas rendering for patient vitals graphs.
+- Enforced end-to-end encryption with ephemeral key exchanges for all audio/video tele-health rooms.
+- Configured continuous compliance monitoring with automated vulnerability scans and immutable audit logging.

@@ -1,0 +1,131 @@
+---
+title: "SynapseStudio — Adaptive Collaborative Realtime Canvas"
+slug: "synapse-studio"
+client: "Synapse Labs"
+industry: "EdTech / WebSockets"
+services: ["Real-Time Systems", "Canvas Engineering", "Distributed State Sync"]
+statusBadge: "60 FPS VECTOR CANVAS"
+indexNumber: "06"
+monogram: "SS"
+order: 6
+categoryBadge: "EDTECH · WEBSOCKETS · 2023"
+filterCategories: ["MOBILE"]
+subtitle: "Implemented CRDT-based multi-user state synchronization powering zero-friction infinite vector canvases with sub-25ms peer propagation over WebSockets."
+heroTitle:
+  line1: "Synchronizing"
+  line2: "collaborative canvases"
+  accent: "at 60 FPS in real time."
+metadataStrip:
+  client: "Synapse Labs"
+  timeline: "14 weeks · Q3 2023"
+  role: "Real-Time Systems · Canvas Engineering · Distributed State Sync"
+telemetry:
+  screen: "SCREEN_06 // VECTOR_CANVAS"
+  latency: "19ms"
+  status: "STATUS: LIVE"
+  loc: "EU_WEST_LON"
+  enc: "BINARY-WS / YJS"
+  title: "SYNAPSESTUDIO"
+  subtitle: "Infinite Canvas Spatial Partitioning & CRDT Multi-User Collaboration"
+problem:
+  headline: "Hundreds of remote designers. Canvas stuttering on iPads. Nasty merge conflicts on shared boards."
+  paragraphs:
+    - "SynapseStudio set out to create an unconstrained infinite vector whiteboard for collaborative product design and educational workshops. Early prototypes built with standard SVG DOM trees froze whenever more than twenty participants drew simultaneously."
+    - "Worse, operational transformation (OT) synchronization code frequently corrupted grouped vector paths and erased stroke histories during simultaneous offline reconnects."
+    - "Synapse partnered with Codedway to rebuild their vector canvas from the ground up using GPU hardware acceleration and Conflict-free Replicated Data Types (CRDTs)."
+  stats:
+    - value: "500+"
+      label: "concurrent active peers per infinite canvas room"
+    - value: "0.00%"
+      label: "state sync conflict rate achieved via Yjs CRDTs"
+    - value: "60 FPS"
+      label: "silky rendering speed sustained on mobile and low-powered tablets"
+approach:
+  headline: "GPU spatial acceleration paired with deterministic CRDT convergence."
+  phases:
+    - phase: "Phase 01"
+      title: "Canvas Core (Wk 1–4)"
+      desc: "Replacing SVG DOM with custom WebGL pipeline featuring Quadtree spatial partitioning."
+      tag: "// WEBGPU_QUADTREE"
+    - phase: "Phase 02"
+      title: "State Sync (Wk 5–8)"
+      desc: "Integrating Yjs CRDT over multiplexed binary WebSockets for peer state replication."
+      tag: "// CRDT_BINARY_WS"
+    - phase: "Phase 03"
+      title: "Mobile Optimization (Wk 9–11)"
+      desc: "Touch gesture decimation and memory footprint tuning for Safari and Android browsers."
+      tag: "// TOUCH_GESTURE"
+    - phase: "Phase 04"
+      title: "Stress Tests (Wk 12–14)"
+      desc: "Deploying headless Chromium bots generating 10,000 vector operations/sec per board."
+      tag: "// 10K_VECTORS_PASS"
+  quote:
+    text: "Codedway took our stuttering prototype and transformed it into the smoothest, fastest vector canvas on the web."
+    author: "— CEO, Synapse Labs"
+features:
+  - title: "Hardware-Accelerated Vector Canvas"
+    desc: "WebGL/2D Context rendering engine with dynamic spatial occlusion culling keeping draw calls minimal."
+    tech: "WebGL · Canvas API · TypeScript"
+  - title: "CRDT State Synchronization"
+    desc: "Conflict-free state replication ensuring hundreds of users can edit shapes simultaneously with zero data loss."
+    tech: "Yjs · WebSockets · Go"
+  - title: "Binary Protocol Multiplexing"
+    desc: "Compact binary packet serialization reducing cursor movement bandwidth consumption by 85%."
+    tech: "Protobuf · WebSockets · Node.js"
+  - title: "Smart Gesture Decimation"
+    desc: "Algorithmic smoothing and path decimation algorithms converting raw stylus input into crisp bezier curves."
+    tech: "TypeScript · Math / Geometry"
+  - title: "Infinite Undo/Redo Engine"
+    desc: "Selective non-destructive undo/redo tracking individual participant edits without clobbering peers."
+    tech: "CRDT History · Memory Buffers"
+  - title: "Cross-Platform Touch Gestures"
+    desc: "Fluid multi-touch pinch, zoom, and panning mechanics responsive on iOS, Android, and desktop mice."
+    tech: "React · Pointer Events API"
+resultsData:
+  stats:
+    - value: "500+"
+      label: "CONCURRENT PEERS PER ROOM"
+    - value: "<25ms"
+      label: "PEER PROPAGATION LATENCY"
+    - value: "60 FPS"
+      label: "STABLE CANVAS FRAME RATE"
+    - value: "0.00%"
+      label: "STATE MERGE CONFLICTS"
+  quote:
+    text: "Our users routinely praise how responsive the board feels, even in global workshops with hundreds of simultaneous participants."
+    author: "— Head of Product, Synapse Labs"
+metrics:
+  - label: "CONCURRENT PEERS"
+    value: "500+ / Canvas Room"
+  - label: "SYNC CONFLICT RATE"
+    value: "0.00% via Yjs/Go"
+results:
+  - "500+ concurrent active cursors and vector transformations per canvas room"
+  - "0.00% state conflicts achieved through Conflict-free Replicated Data Types (CRDT)"
+  - "Maintained steady 60 FPS vector canvas rendering on both web and tablet devices"
+metaTitle: "SynapseStudio: Adaptive Realtime Vector Canvas | Codedway"
+metaDescription: "How Codedway implemented CRDT-based multi-user state synchronization for infinite vector canvases with sub-25ms latency."
+ogImage: "/images/og-case-studies.png"
+publishedAt: "2023-11-20"
+stack: ["REACT", "WEBSOCKETS", "GO", "CANVAS API"]
+---
+
+SynapseStudio empowers distributed creative and engineering teams to brainstorm, diagram, and collaborate in real time on an infinite canvas with zero lag.
+
+<Callout type="benchmark" title="Real-Time Synchronization">
+By implementing Yjs CRDTs over multiplexed binary WebSockets, vector mutations propagate across hundreds of concurrent peers worldwide in less than 25 milliseconds.
+</Callout>
+
+## The Challenge
+
+1. **State Divergence:** Preventing race conditions and canvas stutter when hundreds of users simultaneously edit geometric shapes.
+2. **GPU Acceleration:** Rendering thousands of complex SVG path elements at a steady 60 frames per second on mobile Safari and lower-powered tablets.
+3. **Bandwidth Optimization:** Minimizing cursor broadcast payload sizes to avoid saturating client network connections.
+
+<TechStack items={["React", "WebSockets", "Go", "HTML5 Canvas", "Yjs", "WebAssembly"]} />
+
+## Architecture Highlights
+
+- Custom WebGL/Canvas rendering pipeline with spatial partitioning (Quadtree) for off-screen occlusion culling.
+- High-throughput Go WebSocket edge servers with binary protocol encoding.
+- CRDT undo/redo management preserving individual user history without clobbering collaborative changes.
