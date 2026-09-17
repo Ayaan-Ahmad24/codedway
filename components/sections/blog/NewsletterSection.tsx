@@ -35,7 +35,7 @@ export function NewsletterSection() {
           <div className="lg:col-span-6">
             {subscribed ? (
               <div className="bg-[#141414] border border-[#C8FF57] p-4 text-[#C8FF57] font-mono text-sm">
-                &check; DISPATCH_SUBSCRIBED // You are now on the engineering distribution list.
+                {"✓ DISPATCH_SUBSCRIBED // You are now on the engineering distribution list."}
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch gap-0">

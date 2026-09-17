@@ -30,18 +30,6 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
 }
 
-/* Custom cursor tracker */
-#cursor-dot {
-  pointer-events: none;
-  position: fixed;
-  width: 14px;
-  height: 14px;
-  background-color: #C8FF57;
-  mix-blend-mode: difference;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  transition: width 0.2s ease, height 0.2s ease, transform 0.05s ease-out;
-}
 
 /* Case study row hover shift */
 .case-row {
@@ -119,6 +107,67 @@
 .telemetry-bar:hover {
   opacity: 0.85;
   transform: scaleY(1.12);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0C0C0C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C8FF57;
+}
+
+/* Systems Limited inspired tech grid background */
+.tech-grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.tech-radial-glow {
+  background: radial-gradient(circle at 50% 30%, rgba(200, 255, 87, 0.08) 0%, rgba(12, 12, 12, 0) 70%);
+}
+
+/* Subtle glow pulse on hover */
+.glow-on-hover {
+  transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.glow-on-hover:hover {
+  box-shadow: 0 0 25px -5px rgba(200, 255, 87, 0.15);
+  border-color: rgba(200, 255, 87, 0.5) !important;
+}
+
+/* Enterprise status pulse */
+@keyframes status-radar {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(200, 255, 87, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(200, 255, 87, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(200, 255, 87, 0);
+  }
+}
+
+.radar-pulse {
+  animation: status-radar 2.5s infinite;
 }
 
 /* Button click tactile feedback */

@@ -1,3 +1,5 @@
+// LEGAL NOTICE: The terms on this page reflect operational engineering practices for Codedway (Lahore, Pakistan) servicing international clients. A qualified legal professional should review and adapt these terms prior to formal production execution.
+
 import { Metadata } from "next";
 import Link from "next/link";
 import { constructMetadata, getBreadcrumbSchema } from "@/lib/seo";
@@ -44,21 +46,21 @@ export default function NdaPage() {
 
           <div className="space-y-12 text-[#D0CCC4] font-light leading-relaxed">
             <section className="space-y-4">
-              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">// 01. Standard Bilateral Protection</h2>
+              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">{"// 01. Standard Bilateral Protection"}</h2>
               <p className="text-[15px]">
                 We protect your intellectual property as zealously as our own. Prior to deep technical discovery or reviewing internal API documentation, we execute standard bilateral non-disclosure agreements with clearly defined terms of confidentiality, non-use, and restricted distribution.
               </p>
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">// 02. Isolated Clean-Room Engineering</h2>
+              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">{"// 02. Isolated Clean-Room Engineering"}</h2>
               <p className="text-[15px]">
                 Engineering staff assigned to your project work in isolated access domains. We do not permit cross-pollination of confidential schemas, algorithmic weights, or business secrets across client accounts.
               </p>
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">// 03. Fast-Track Execution</h2>
+              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">{"// 03. Fast-Track Execution"}</h2>
               <p className="text-[15px]">
                 Need an NDA signed before our first intake call? Email our operations desk at{" "}
                 <a href="mailto:nda@codedway.com" className="text-accentLime underline underline-offset-4">

@@ -156,12 +156,12 @@ In the project root, you can run the following commands:
 ```
 codedway/
 ├── app/                          # Next.js App Router (pages & layouts)
-│   ├── layout.tsx                # Root layout (Header, CustomCursor, Noise overlay, Footer)
+│   ├── layout.tsx                # Root layout (Header, Noise overlay, Footer)
 │   ├── page.tsx                  # Homepage
 │   ├── about/                    # About page
 │   ├── services/                 # Services directory & dynamic routes ([slug])
 │   ├── case-studies/             # Portfolio directory & dynamic routes ([slug])
-│   ├── blog/                     # Engineering journal & dynamic routes ([slug])
+│   ├── blog/                     # Blog & dynamic routes ([slug])
 │   ├── careers/                  # Careers & open positions
 │   ├── contact/                  # Multi-tab inquiry form
 │   ├── privacy/                  # Privacy policy page
@@ -173,7 +173,7 @@ codedway/
 │   ├── layout/                   # Header, Footer, Navigation
 │   ├── mdx/                      # Custom MDX components (Callout, TechStack, ResultCard)
 │   ├── sections/                 # Modular page sections (hero, process, testimonials, etc.)
-│   └── ui/                       # Base UI primitives (Button, Badge, Card, Reveal, CustomCursor)
+│   └── ui/                       # Base UI primitives (Button, Badge, Card, Reveal, Counter, ScrollProgressBar)
 │
 ├── content/                      # Content repository (MDX files)
 │   ├── blog/                     # Markdown articles (.mdx)

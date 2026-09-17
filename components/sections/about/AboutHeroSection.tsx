@@ -40,7 +40,7 @@ export function AboutHeroSection() {
       {/* Bottom Architectural Indicator */}
       <div className="w-full flex items-end justify-between pt-8 border-t border-[#201f1f]/60">
         <div className="flex items-center gap-4 font-mono text-[11px] text-[#8d937c] uppercase tracking-widest">
-          <span>SYS_REF: 000//ABOUT</span>
+          <span>CW_REF: 000//ABOUT</span>
           <span>•</span>
           <span>LATENCY: 18MS</span>
         </div>

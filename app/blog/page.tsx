@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import { BlogIndexContainer } from "@/components/sections/blog/BlogIndexContainer";
 
 export const metadata: Metadata = constructMetadata({
-  title: "The Build Log (Journal)",
+  title: "Engineering Blog",
   description:
     "Technical essays, architecture teardowns, and engineering post-mortems written by practitioners at Codedway software house.",
   canonical: "/blog",
@@ -13,12 +13,12 @@ export const metadata: Metadata = constructMetadata({
 
 const BLOG_FAQS = [
   {
-    question: "What topics are covered in the Codedway Journal?",
+    question: "What topics are covered in the Codedway Blog?",
     answer:
       "We publish in-depth technical post-mortems, distributed systems architecture guides, AI & RAG integration benchmarks, DevOps checklists, and async engineering culture essays.",
   },
   {
-    question: "Who writes the articles in the Build Log?",
+    question: "Who writes the articles in the Blog?",
     answer:
       "Every article is written directly by senior software engineers, systems architects, and technical leaders at Codedway based on actual production experiences.",
   },
@@ -30,7 +30,7 @@ export default async function BlogIndexPage() {
 
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", item: "/" },
-    { name: "Journal", item: "/blog" },
+    { name: "Blog", item: "/blog" },
   ]);
 
   const faqSchema = getFAQSchema(BLOG_FAQS);
@@ -38,7 +38,7 @@ export default async function BlogIndexPage() {
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "Codedway Journal — The Build Log",
+    name: "Codedway Blog",
     description:
       "Technical essays, architecture teardowns, and engineering post-mortems written by practitioners at Codedway.",
     url: `${siteConfig.url}/blog`,

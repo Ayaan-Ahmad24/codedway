@@ -1,3 +1,5 @@
+// LEGAL NOTICE: The terms on this page reflect operational engineering practices for Codedway (Lahore, Pakistan) servicing international clients. A qualified legal professional should review and adapt these terms prior to formal production execution.
+
 import { Metadata } from "next";
 import Link from "next/link";
 import { constructMetadata, getBreadcrumbSchema } from "@/lib/seo";
@@ -44,28 +46,28 @@ export default function TermsPage() {
 
           <div className="space-y-12 text-[#D0CCC4] font-light leading-relaxed">
             <section className="space-y-4">
-              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">// 01. Engagement Framework</h2>
+              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">{"// 01. Engagement Framework"}</h2>
               <p className="text-[15px]">
                 Codedway provides software engineering, product architecture, staff augmentation, and AI integration services on a sprint, milestone, or dedicated retainer basis. All services are governed by an executed Master Services Agreement (MSA) and associated Statement of Work (SOW).
               </p>
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">// 02. Sprint Deliverables & Code Acceptance</h2>
+              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">{"// 02. Sprint Deliverables & Code Acceptance"}</h2>
               <p className="text-[15px]">
                 Deliverables are tested hermetically prior to sprint cutover. Clients have a 10-business-day review window following delivery of pull requests or staging builds. Revisions addressing scope deviations are resolved immediately at zero additional fee.
               </p>
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">// 03. Payment & Retainers</h2>
+              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">{"// 03. Payment & Retainers"}</h2>
               <p className="text-[15px]">
                 Invoicing occurs according to milestones agreed upon in the SOW. Retainer fees are invoiced monthly in advance with net-15 payment terms. We accept SWIFT international wire transfers, Stripe B2B, and automated ACH.
               </p>
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">// 04. Liability & Warranties</h2>
+              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">{"// 04. Liability & Warranties"}</h2>
               <p className="text-[15px]">
                 We warrant that all delivered code is original, unencumbered by restrictive licenses, and engineered in compliance with industry-standard production best practices. Total liability is strictly limited to the cumulative fees paid under the relevant SOW.
               </p>

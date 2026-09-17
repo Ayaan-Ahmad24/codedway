@@ -25,7 +25,7 @@ export const siteConfig = {
     { label: "Work", href: "/case-studies" },
     { label: "Services", href: "/services" },
     { label: "About", href: "/about" },
-    { label: "Journal", href: "/blog" },
+    { label: "Blog", href: "/blog" },
   ],
   footerNav: {
     services: [

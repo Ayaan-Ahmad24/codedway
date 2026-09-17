@@ -1,3 +1,5 @@
+// LEGAL NOTICE: The terms on this page reflect operational engineering practices for Codedway (Lahore, Pakistan) servicing international clients. A qualified legal professional should review and adapt these terms prior to formal production execution.
+
 import { Metadata } from "next";
 import Link from "next/link";
 import { constructMetadata, getBreadcrumbSchema } from "@/lib/seo";
@@ -44,28 +46,28 @@ export default function PrivacyPage() {
 
           <div className="space-y-12 text-[#D0CCC4] font-light leading-relaxed">
             <section className="space-y-4">
-              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">// 01. Zero Data Harvesting Principle</h2>
+              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">{"// 01. Zero Data Harvesting Principle"}</h2>
               <p className="text-[15px]">
                 At Codedway, privacy is engineered into our architecture, not appended as an afterthought. We do not sell, license, or monetize client data, code repositories, telemetry feeds, or user interactions. All data exchanged between your organization and Codedway exists solely to fulfill contracted engineering obligations.
               </p>
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">// 02. Client Code & Intellectual Property</h2>
+              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">{"// 02. Client Code & Intellectual Property"}</h2>
               <p className="text-[15px]">
                 All software, schemas, vector embeddings, documentation, and technical assets developed during an engagement belong exclusively to the client upon invoice settlement. Codedway enforces strict isolated VPC enclaves and never uses client codebases or proprietary training data to train external AI models.
               </p>
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">// 03. Telemetry & Analytics</h2>
+              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">{"// 03. Telemetry & Analytics"}</h2>
               <p className="text-[15px]">
                 Our website utilizes minimal, privacy-respecting analytics without third-party tracking cookies or fingerprinting scripts. We log only technical connection parameters required for DDoS mitigation and infrastructure availability monitoring.
               </p>
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">// 04. Contact & Data Access</h2>
+              <h2 className="text-[22px] font-medium text-[#F0EDE8] font-mono">{"// 04. Contact & Data Access"}</h2>
               <p className="text-[15px]">
                 For questions regarding data processing or to request data erasure under GDPR/CCPA, contact our engineering security office at{" "}
                 <a href="mailto:security@codedway.com" className="text-accentLime underline underline-offset-4">

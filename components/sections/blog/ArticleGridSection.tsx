@@ -102,7 +102,7 @@ export function ArticleGridSection({
         </div>
       ) : (
         <div className="py-20 text-center text-[#888888] font-mono text-sm border border-[#222222] bg-[#141414]">
-          NO_MATCHING_ENTRIES // Try modifying your search or filter criteria.
+          {"NO_MATCHING_ENTRIES // Try modifying your search or filter criteria."}
         </div>
       )}
 

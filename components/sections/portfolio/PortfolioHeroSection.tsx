@@ -88,7 +88,7 @@ export function PortfolioHeroSection({
 
           <div className="text-[11px] font-mono text-[#555555] tracking-widest uppercase flex items-center space-x-3 select-none">
             <span className="w-1.5 h-1.5 bg-[#444]" />
-            <span>SYS_REF: ARCHIVE_V2.6</span>
+            <span>CW_REF: ARCHIVE_V2.0</span>
             <span className="text-[#333]">•</span>
             <span className="text-[#777]">INDEXING {counts.ALL ?? 6} REPOS</span>
           </div>

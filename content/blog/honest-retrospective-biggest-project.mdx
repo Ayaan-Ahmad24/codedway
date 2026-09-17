@@ -1,17 +1,175 @@
 ---
-title: "Honest retrospective: what we got wrong on our biggest project"
+title: "What Happened When 100 Million Telemetry Events Hit Our Stack: An Honest Retrospective"
 slug: "honest-retrospective-biggest-project"
-excerpt: "An unvarnished account of premature microservice decomposition, Redis cluster misconfigurations, and key architectural post-mortems."
-author: "Saad Rehman"
-authorRole: "Lead Engineer"
-authorInitials: "SR"
-publishedAt: "2026-04-11"
-category: "Product"
-tags: ["Product", "Retrospective", "Architecture", "Engineering"]
-readTime: "10 min read"
-metaTitle: "Architectural Retrospective: Lessons Learned | Codedway"
-metaDescription: "An unvarnished account of premature microservices and key architectural post-mortems."
+excerpt: "A transparent post-mortem of what broke, what survived, and how we redesigned our IoT telemetry and mobile infrastructure under live fire when real-world traffic surged 12x overnight."
+author: "Ayaan Khan"
+authorRole: "Technical Director"
+authorHandle: "ayaankhan"
+authorInitials: "AK"
+publishedAt: "2026-02-18"
+updatedAt: "2026-03-01"
+category: "Retrospective"
+tags: ["Post-Mortem", "Architecture", "IoT", "AWS", "Flutter", "Scaling"]
+readingTime: "16 min read"
+isFeatured: false
+figNumber: "10"
+figLabel: "POSTMORTEM_TRACE"
+metaTitle: "100 Million Events Post-Mortem | Codedway Blog"
+metaDescription: "A brutally honest engineering retrospective of scaling an IoT logistics architecture under 12x traffic surges: socket exhaustion, buffer overflow, and recovery."
 ogImage: "/images/og-blog.png"
 ---
 
-Public engineering retrospectives are usually sterile PR exercises. Here is an honest post-mortem on what broke when scaling a high-throughput platform to 500,000 users.
+Most engineering blogs only publish pristine success stories: clean architecture diagrams, triumphant benchmarks, and flawless deployments. But in real-world distributed systems engineering, genuine wisdom is forged during the 2:00 AM production outages where your assumptions are dismantled under unexpected real-world load.
+
+In late 2025, an autonomous fleet logistics platform engineered by Codedway experienced an unprecedented surge in active vehicles following a major regional transport contract rollout. 
+
+Over the course of 72 hours, incoming GPS telemetry events spiked from a predictable 8 million events per day to **over 104 million events per day** — an instantaneous 12x traffic surge.
+
+Parts of our architecture performed flawlessly. Other parts failed violently. 
+
+Here is our transparent, unvarnished post-mortem of what broke, what held, and the critical architectural lessons we learned while refactoring under live fire.
+
+<Callout type="warning" title="The Post-Mortem Philosophy">
+A blameless post-mortem does not seek to assign fault to individual engineers. It examines systemic design gaps, missing observability metrics, and automated resilience mechanisms that failed to prevent the incident.
+</Callout>
+
+<TechStack items={["AWS IoT", "Python", "Go", "PostgreSQL", "Kafka", "Flutter", "TimescaleDB"]} />
+
+---
+
+## 1. The Incident Timeline: 72 Hours Under Live Fire
+
+```
+[ THURSDAY 08:30 PKT ] ── Regional contract launches across 4 metropolitan hubs.
+[ THURSDAY 11:15 PKT ] ── Telemetry events jump from 1,200/sec to 14,500/sec.
+[ THURSDAY 11:42 PKT ] ── INCIDENT 1: Primary PostgreSQL write latency spikes to 3.8s.
+[ THURSDAY 12:10 PKT ] ── INCIDENT 2: Socket exhaustion on HTTP ingestion gateway.
+[ THURSDAY 13:30 PKT ] ── Live fire emergency patch: Shifted ingest from HTTP to MQTT broker.
+[ FRIDAY   04:00 PKT ] ── Database write queue normalized; buffer memory reconfigured.
+[ SATURDAY 18:00 PKT ] ── System reaches steady-state processing 100M+ events/day at 14ms latency.
+```
+
+---
+
+## 2. What Broke: Failure 1 — The HTTP Ingestion Gateway Socket Exhaustion
+
+Our initial ingestion tier used a lightweight Go HTTP microservice deployed behind an AWS Application Load Balancer. Each vehicle device opened an HTTPS connection, posted a 2KB JSON telemetry batch, and closed the connection.
+
+At 1,000 vehicles, connection setup overhead was negligible. But when 14,000 active devices began sending telemetry bursts every 3 seconds:
+1. **TCP Handshake & TLS Overhead:** Continuous SSL/TLS negotiations consumed 85% of ingress container CPU cycles.
+2. **Ephemeral Port Exhaustion:** The Linux kernel on our EC2 container hosts exhausted available ephemeral socket ports (`TIME_WAIT` state backlog), causing the load balancer to report HTTP 502 Bad Gateway errors.
+
+### The Emergency Fix: Persistent MQTT Protocol
+We immediately deployed an **AWS IoT Core MQTT Broker** cluster. Instead of repeatedly opening and closing HTTP connections, vehicles established a single persistent, bidirectional, lightweight MQTT connection over TLS. 
+
+Network bandwidth dropped by **74%**, and CPU utilization on ingestion workers plummeted from 92% to 11%.
+
+---
+
+## 3. What Broke: Failure 2 — Relational Write Saturation
+
+Our core PostgreSQL database was configured to insert incoming telemetry points into a partitioned table. Even with native table partitioning by week, the write throughput (exceeding 12,000 batch inserts/sec) overwhelmed disk write IOPS on our AWS RDS instance:
+- Write-Ahead Log (WAL) generation saturated the EBS storage volume IOPS limit (16,000 IOPS).
+- PostgreSQL checkpointing processes stalled incoming queries, causing connection pools to lock up.
+
+### The Refactor: Ingest Buffer with Kafka and TimescaleDB
+We decoupled the ingestion pipeline completely using an asynchronous buffer:
+
+```
+[ VEHICLE FLEET (MQTT) ]
+           │
+           ▼
+[ AWS IOT CORE BROKER ]
+           │
+           ▼
+ [ APACHE KAFKA QUEUE ] ── Decouples ingest from disk storage
+           │
+           ▼
+[ WORKER BATCH CONSUMERS (Go) ] ── Groups 5,000 events into single multi-row insert
+           │
+           ▼
+ [ TIMESCALEDB HYPERTABLE ] ── Continuous aggregate compression
+```
+
+### The Ingestion Worker in Go
+
+```go
+package consumer
+
+import (
+	"context"
+	"time"
+
+	"github.com/jackc/pgx/v5"
+	"github.com/segmentio/kafka-go"
+)
+
+type TelemetryBatcher struct {
+	pool      *pgx.Pool
+	batchSize int
+}
+
+func (b *TelemetryBatcher) ProcessBatchStream(ctx context.Context, reader *kafka.Reader) error {
+	batch := make([]TelemetryRecord, 0, b.batchSize)
+	ticker := time.NewTicker(250 * time.Millisecond)
+	defer ticker.Stop()
+
+	for {
+		select {
+		case <-ctx.Done():
+			return ctx.Err()
+		case <-ticker.C:
+			if len(batch) > 0 {
+				if err := b.flushToDatabase(ctx, batch); err != nil {
+					return err
+				}
+				batch = batch[:0] // Reset slice memory
+			}
+		default:
+			msg, err := reader.FetchMessage(ctx)
+			if err != nil {
+				continue
+			}
+
+			record := deserializeTelemetry(msg.Value)
+			batch = append(batch, record)
+
+			if len(batch) >= b.batchSize {
+				if err := b.flushToDatabase(ctx, batch); err != nil {
+					return err
+				}
+				batch = batch[:0]
+				reader.CommitMessages(ctx, msg)
+			}
+		}
+	}
+}
+```
+
+<ResultCard 
+  metric="104M" 
+  label="DAILY EVENTS PROCESSED" 
+  description="Sustained in production with 99.98% pipeline uptime and sub-20ms batch ingestion write latency." 
+/>
+
+---
+
+## 4. What Survived: The Flutter Mobile Telemetry Engine
+
+While our backend was battling connection limits, the **Flutter mobile driver application** performed with complete resilience.
+
+Why? Because six months prior, we had architected the mobile client with an **Offline-First SQLite Cache & Exponential Backoff Sync Engine**:
+- When the backend returned 502/504 errors, the mobile app did not crash or freeze.
+- It seamlessly stored GPS points in a local encrypted SQLite database on the device.
+- It used exponential jitter backoff to retry uploads once network conditions normalized.
+- Zero driver telemetry data was lost during the entire 3-hour backend migration.
+
+---
+
+## 5. Architectural Axioms Learned Under Fire
+
+1. **Decouple Ingestion from Storage:** Never allow client devices to write directly to your database. Always place a durable, persistent queue (Kafka, SQS, or Redis Stream) between ingress and storage.
+2. **Persistent Connections Win at Scale:** For high-frequency devices, MQTT and WebSockets drastically outperform HTTP/REST in bandwidth and CPU efficiency.
+3. **Design for Failure as a Default State:** Systems fail. What distinguishes great software is whether it degrades gracefully or fails catastrophically.
+
+This outage was painful, but the architectural hardening it forced upon our team created an enterprise-grade platform that now processes billions of data points each month with absolute stability.

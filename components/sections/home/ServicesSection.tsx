@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Reveal } from "@/components/ui/Reveal";
 
 interface ServiceItem {
   slug: string;
@@ -85,25 +86,42 @@ export function ServicesSection() {
       {/* 2-column grid of 4 cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {SERVICES.map((service, idx) => (
-          <Reveal key={service.slug} delay={idx * 100} direction="up">
+          <Reveal key={service.slug} delay={idx * 100} direction="up" scale>
             <Link
               href={`/services/${service.slug}`}
-              className="bg-[#161616] border border-[#222222] p-8 sm:p-10 flex flex-col justify-between relative group hover:border-[#333333] transition-colors block h-full"
+              className="bg-[#141414] border border-[#222222] p-8 sm:p-10 flex flex-col justify-between relative group glow-on-hover hover:border-accentLime/60 hover:-translate-y-1 transition-all duration-300 block h-full relative overflow-hidden"
             >
-              <span className="absolute top-6 right-6 text-accentLime text-sm opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
-                &rarr;
-              </span>
+              {/* Subtle card top gradient line */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accentLime/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-10 h-10 text-[#F0EDE8] group-hover:text-accentLime transition-colors p-2 bg-[#1C1C1C] border border-[#2A2A2A] group-hover:border-accentLime/40">
+                  {service.icon}
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="font-mono text-[11px] text-[#555555] group-hover:text-accentLime transition-colors">
+                    {`0${idx + 1} // CAPABILITY`}
+                  </span>
+                  <span className="text-accentLime text-base opacity-60 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all">
+                    &rarr;
+                  </span>
+                </div>
+              </div>
+
               <div>
-                <div className="w-8 h-8 mb-6 text-[#F0EDE8]">{service.icon}</div>
-                <h3 className="text-[18px] font-bold text-[#F0EDE8] tracking-tight mb-3 group-hover:text-accentLime transition-colors">
+                <h3 className="text-[20px] font-bold text-[#F0EDE8] tracking-tight mb-3 group-hover:text-accentLime transition-colors font-sans">
                   {service.title}
                 </h3>
-                <p className="text-[14px] text-[#888888] leading-relaxed mb-8 font-light">
+                <p className="text-[14px] text-[#999999] leading-relaxed mb-8 font-light">
                   {service.description}
                 </p>
               </div>
-              <div className="text-[12px] font-mono text-[#666666] pt-6 border-t border-[#222222] uppercase tracking-wider">
-                {service.tags}
+
+              <div className="flex items-center justify-between text-[11px] font-mono text-[#666666] pt-6 border-t border-[#222222] uppercase tracking-wider group-hover:border-[#2A2A2A]">
+                <span>{service.tags}</span>
+                <span className="text-accentLime font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                  Learn more &rarr;
+                </span>
               </div>
             </Link>
           </Reveal>

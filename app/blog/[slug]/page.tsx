@@ -64,7 +64,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", item: "/" },
-    { name: "Journal", item: "/blog" },
+    { name: "Blog", item: "/blog" },
     { name: frontmatter.title, item: `/blog/${frontmatter.slug}` },
   ]);
 

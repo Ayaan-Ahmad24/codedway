@@ -44,21 +44,28 @@ export function ProcessSection() {
           const isFirst = idx === 0;
 
           return (
-            <Reveal key={step.number} delay={idx * 90} direction="up">
+            <Reveal key={step.number} delay={idx * 90} direction="up" scale>
               <div
-                className={`py-10 ${
+                className={`py-10 group hover:bg-[#121212] transition-colors p-6 ${
                   isFirst
-                    ? "pr-6 md:pr-8 md:border-r border-accentLime/40"
+                    ? "md:border-r border-[#262626]"
                     : isLast
-                    ? "md:pl-8"
-                    : "md:px-8 md:border-r border-accentLime/40"
+                    ? ""
+                    : "md:border-r border-[#262626]"
                 }`}
               >
-                <div className="text-[48px] font-light text-[#444444] font-mono leading-none mb-6">
-                  {step.number}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="text-[44px] font-mono text-[#333333] group-hover:text-accentLime transition-colors leading-none font-light">
+                    {step.number}
+                  </div>
+                  <span className="w-2 h-2 rounded-full bg-[#2A2A2A] group-hover:bg-accentLime group-hover:shadow-[0_0_8px_#C8FF57] transition-all" />
                 </div>
-                <h3 className="text-[16px] font-bold text-[#F0EDE8] mb-3">{step.title}</h3>
-                <p className="text-[14px] text-[#888888] leading-relaxed font-light">{step.description}</p>
+                <h3 className="text-[17px] font-bold text-[#F0EDE8] mb-3 group-hover:text-accentLime transition-colors font-sans">
+                  {step.title}
+                </h3>
+                <p className="text-[14px] text-[#888888] leading-relaxed font-light">
+                  {step.description}
+                </p>
               </div>
             </Reveal>
           );

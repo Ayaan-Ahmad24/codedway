@@ -10,7 +10,7 @@ export function FeaturedArticleSection({ post }: FeaturedArticleSectionProps) {
     <section className="max-w-[1400px] mx-auto px-6 md:px-12 py-16">
       <div className="mb-4 flex items-center justify-between">
         <span className="text-[11px] font-mono uppercase tracking-widest text-[#555555]">
-          FEATURED // LEAD_STORY
+          {"FEATURED // LEAD_STORY"}
         </span>
         <span className="text-[11px] font-mono text-[#C8FF57] flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 bg-[#C8FF57] inline-block" />
@@ -74,7 +74,7 @@ export function FeaturedArticleSection({ post }: FeaturedArticleSectionProps) {
           {/* Right 35% Flat block with 01 thin serif */}
           <div className="lg:col-span-4 bg-[#1A1F2E] border border-[#222222] min-h-[220px] lg:min-h-full flex flex-col items-center justify-center p-8 relative overflow-hidden">
             <span className="text-[10px] font-mono text-[#555555] tracking-widest uppercase absolute top-4 left-4">
-              FIG_01 // EDITORIAL_BLOCK
+              {"FIG_01 // EDITORIAL_BLOCK"}
             </span>
             <div className="font-editorial italic text-7xl md:text-8xl text-[#6B7280]/60 font-light select-none">
               {post.figNumber || "01"}

@@ -33,7 +33,7 @@ export function ContactForm() {
             <p className="text-xs sm:text-[13px] text-[#888888] mt-0.5">Submission status: CONFIRMED</p>
           </div>
           <div className="text-[10px] font-mono text-accentLime uppercase tracking-widest">
-            STATUS // 200_OK
+            {"STATUS // 200_OK"}
           </div>
         </div>
 

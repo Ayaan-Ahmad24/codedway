@@ -17,7 +17,7 @@ export function BlogHeroSection({
         {/* Left: Typographic Title */}
         <div className="lg:col-span-8 space-y-6">
           <div className="flex items-center space-x-3 text-xs uppercase font-mono tracking-wider">
-            <span className="text-[#666666]">Home / Journal</span>
+            <span className="text-[#666666]">Home / Blog</span>
             <span className="text-[#333333]">/</span>
             <span className="px-2.5 py-1 border border-[#222222] text-[#C8FF57] text-[11px] font-mono tracking-widest bg-[#141414]">
               ENGINEERING &middot; PRODUCT &middot; CULTURE

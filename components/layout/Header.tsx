@@ -13,7 +13,7 @@ export function Header() {
     { label: "Work", href: "/case-studies", active: pathname.startsWith("/case-studies") },
     { label: "Services", href: "/services", active: pathname.startsWith("/services") },
     { label: "About", href: "/about", active: pathname.startsWith("/about") },
-    { label: "Journal", href: "/blog", active: pathname.startsWith("/blog") },
+    { label: "Blog", href: "/blog", active: pathname.startsWith("/blog") },
   ];
 
   return (
@@ -28,7 +28,7 @@ export function Header() {
             {siteConfig.name}
           </Link>
           <span className="hidden sm:inline-block text-[11px] font-mono uppercase text-[#555555] tracking-widest border-l border-[#222222] pl-4 select-none">
-            SYS_V2.6
+            CODEDWAY_V2.0
           </span>
         </div>
 

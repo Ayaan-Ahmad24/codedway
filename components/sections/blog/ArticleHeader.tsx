@@ -17,7 +17,7 @@ export function ArticleHeader({ post }: ArticleHeaderProps) {
           className="flex items-center gap-2 font-mono text-[11px] tracking-widest text-[#8d937c] uppercase"
         >
           <Link href="/blog" className="hover:text-[#F0EDE8] transition-colors">
-            Journal
+            Blog
           </Link>
           <span className="text-[#353534]">/</span>
           <span className="text-[#c9c6c1]">{post.category}</span>

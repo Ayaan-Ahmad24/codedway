@@ -34,6 +34,9 @@ const config: Config = {
 
         // Accents & Signals
         accent: "#C8FF57",
+        accentLime: "#C8FF57",
+        cyberEmerald: "#00F5A0",
+        techCyan: "#00E5FF",
         "surface-tint": "#a3d731",
         "primary-container": "#bef44d",
         "on-primary-container": "#4f6e00",
@@ -53,10 +56,10 @@ const config: Config = {
         dividerSubtle: "#1A1A1A",
       },
       fontFamily: {
-        sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-        serif: ['"DM Serif Display"', "serif"],
-        editorial: ['"EB Garamond"', "serif"],
-        mono: ['"JetBrains Mono"', "monospace"],
+        sans: ["var(--font-sans)", "Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        serif: ["var(--font-serif)", '"DM Serif Display"', "serif"],
+        editorial: ["var(--font-editorial)", '"EB Garamond"', "serif"],
+        mono: ["var(--font-mono)", '"JetBrains Mono"', "monospace"],
       },
       borderRadius: {
         DEFAULT: "0px",
