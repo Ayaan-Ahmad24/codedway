@@ -13,15 +13,34 @@ export function ContactForm() {
   });
 
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("submitting");
+    setErrorMessage("");
 
-    // Simulate submission delay
-    setTimeout(() => {
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data?.error || "Submission failed. Please try again.");
+      }
+
       setStatus("success");
-    }, 600);
+    } catch (err: any) {
+      console.error("Contact Form submission error:", err);
+      setErrorMessage(err?.message || "Something went wrong. Please try again or email enquiries@codedway.com directly.");
+      setStatus("error");
+    }
   };
 
   if (status === "success") {
@@ -203,6 +222,13 @@ export function ContactForm() {
             className="w-full p-3.5 text-sm bg-[#141414] border border-[#333333] text-[#F0EDE8] resize-y leading-relaxed focus:border-accentLime outline-none transition-colors"
           />
         </div>
+
+        {/* Error Notification */}
+        {status === "error" && (
+          <div className="p-3 bg-[#2a1111] border border-[#ff4d4d] text-[#ffb3b3] text-xs font-mono leading-relaxed">
+            [ERR_DISPATCH_FAILED]: {errorMessage}
+          </div>
+        )}
 
         {/* Full-width Sharp Submit Button */}
         <div className="pt-2">

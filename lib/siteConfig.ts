@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Codedway",
   legalName: "Codedway Software House",
-  tagline: "Boutique Software House",
+  tagline: "Boutique Software House & Digital Transformation",
   description:
-    "Boutique software house specializing in full-lifecycle product engineering, practical AI systems, and high-throughput production architectures.",
+    "Tier-1 boutique software house & digital transformation firm in Lahore, Pakistan. We engineer high-throughput web platforms, custom AI & RAG systems, and resilient cloud architectures for clients across the US, UK, UAE, and Australia.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://codedway.com",
   ogImage: "/images/og-default.png",
   locale: "en_US",

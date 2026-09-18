@@ -11,9 +11,9 @@ import { JournalPreviewSection } from "@/components/sections/home/JournalPreview
 import { CallToActionSection } from "@/components/sections/home/CallToActionSection";
 
 export const metadata: Metadata = constructMetadata({
-  title: "Boutique Software House",
+  title: "Boutique Software House | Custom AI & Enterprise Product Engineering",
   description:
-    "We partner with technical founders and product teams to design, build, and ship high-performance software, custom AI architectures, and resilient systems fast.",
+    "Codedway is a boutique software house in Lahore partnering with global enterprises and high-growth ventures to engineer scalable web apps, custom AI architectures, and fault-tolerant cloud systems.",
   canonical: "/",
 });
 

@@ -8,9 +8,9 @@ import { AboutMetricsSection } from "@/components/sections/about/AboutMetricsSec
 import { AboutCtaSection } from "@/components/sections/about/AboutCtaSection";
 
 export const metadata: Metadata = constructMetadata({
-  title: "About Us",
+  title: "About Codedway — Enterprise Software House & AI Architects",
   description:
-    "Discover Codedway's origins, engineering philosophy, and senior team. We build high-throughput product architectures and AI pipelines from Lahore for global scale.",
+    "Discover Codedway's origins, engineering philosophy, and senior team. We build high-throughput product architectures, custom AI systems, and cloud infrastructure from Lahore for global scale.",
   canonical: "/about",
 });
 
